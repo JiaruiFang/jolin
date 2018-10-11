@@ -6,5 +6,6 @@
   <packaging>pom</packaging>
   <modules>
   	<module>jolin</module>
+  	<module>jolin-mybatis</module>
   </modules>
 </project>
