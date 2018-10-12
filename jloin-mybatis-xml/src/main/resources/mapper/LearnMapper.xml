@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.LearnMapper">
+  <resultMap id="baseResultMap" type="com.example.demo.domain.LearnResouce">
+    <id column="id" property="id" jdbcType="BIGINT"  />
+    <result column="author" property="author" jdbcType="VARCHAR"/>
+    <result column="title" property="title" jdbcType="VARCHAR"/>
+    <result column="url" property="url" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <sql id="baseColumnList" >
+    id, author, title,url
+  </sql>
+
+  <select id="queryLearnResouceList" resultMap="baseResultMap" parameterType="java.util.HashMap">
+    select
+    <include refid="baseColumnList" />
+    from learn_resource
+    <where>
+      1 = 1
+      <if test="author!= null and author !=''">
+        AND author like CONCAT(CONCAT('%',#{author,jdbcType=VARCHAR}),'%')
+      </if>
+      <if test="title != null and title !=''">
+        AND title like  CONCAT(CONCAT('%',#{title,jdbcType=VARCHAR}),'%')
+      </if>
+
+    </where>
+  </select>
+
+</mapper>

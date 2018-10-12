@@ -7,5 +7,6 @@
   <modules>
   	<module>jolin</module>
   	<module>jolin-mybatis</module>
+  	<module>jloin-mybatis-xml</module>
   </modules>
 </project>
