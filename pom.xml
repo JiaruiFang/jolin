@@ -9,5 +9,6 @@
   	<module>jolin-mybatis</module>
   	<module>jloin-mybatis-xml</module>
   	<module>jolin-first</module>
+  	<module>jolin-quartz</module>
   </modules>
 </project>
