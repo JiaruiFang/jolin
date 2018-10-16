@@ -1,14 +1,12 @@
 package com.example.demo.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.demo.domain.QuartzJob;
 import com.example.demo.service.QuartzJobService;
 
@@ -33,9 +31,35 @@ public class QuartzJobController {
 		return list;
 	}
 	
-	@PostMapping(value = "/create")
+	/**
+	 * 添加一个job
+	 * @Method: createQuartzJob  
+	 * @Description: TODO
+	 * @param: @param quartzJob
+	 * @param: @return
+	 * @return: String
+	 * @throws  
+	 */  
+	@PostMapping("/create")
 	public String createQuartzJob(@RequestBody QuartzJob quartzJob) {
+		System.out.println("quartzJob description "+quartzJob.getDescription());
+		System.out.println("quartzJob  "+quartzJob);
 		quartzJobServiceImpl.createQuartzJob(quartzJob);
+		return "ok";
+	}
+	
+	/**
+	 * 修改job时间
+	 * @Method: updateQuartzJob  
+	 * @Description: TODO
+	 * @param: @param quartzJob
+	 * @param: @return
+	 * @return: String
+	 * @throws  
+	 */  
+	@PostMapping("/update")
+	public String modifyQuartzJob(@RequestBody QuartzJob quartzJob) {
+		quartzJobServiceImpl.modifyQuartzJob(quartzJob);
 		return "ok";
 	}
 }

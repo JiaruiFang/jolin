@@ -1,8 +1,6 @@
 package com.example.demo.domain;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -52,13 +50,13 @@ public class QuartzJob implements Serializable {
 	private String methodName;
 
 	/** 启动时间 */
-	private Date startTime;
+	private String startTime;
 
 	/** 前一次运行时间 */
-	private Date previousTime;
+	private String previousTime;
 
 	/** 下次运行时间 */
-	private Date nextTime;
+	private String nextTime;
 
 	public QuartzJob() {
 		super();
@@ -71,7 +69,7 @@ public class QuartzJob implements Serializable {
 
 	public QuartzJob(long jobId, String jobName, String jobGroup, String jobStatus, String isConcurrent,
 			String cronExpression, String description, String springId, String jobClass, String methodName,
-			Date startTime, Date previousTime, Date nextTime) {
+			String startTime, String previousTime, String nextTime) {
 		super();
 		this.jobId = jobId;
 		this.jobName = jobName;
@@ -198,27 +196,27 @@ public class QuartzJob implements Serializable {
 		this.methodName = methodName;
 	}
 
-	public Date getStartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Date startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
 
-	public Date getPreviousTime() {
+	public String getPreviousTime() {
 		return previousTime;
 	}
 
-	public void setPreviousTime(Date previousTime) {
+	public void setPreviousTime(String previousTime) {
 		this.previousTime = previousTime;
 	}
 
-	public Date getNextTime() {
+	public String getNextTime() {
 		return nextTime;
 	}
 
-	public void setNextTime(Date nextTime) {
+	public void setNextTime(String nextTime) {
 		this.nextTime = nextTime;
 	}
 
@@ -245,4 +243,5 @@ public class QuartzJob implements Serializable {
 	public static String getConcurrentNot() {
 		return CONCURRENT_NOT;
 	}
+
 }

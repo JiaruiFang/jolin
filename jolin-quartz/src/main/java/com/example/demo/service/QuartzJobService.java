@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import java.util.List;
-
 import com.example.demo.domain.QuartzJob;
 
 /**
@@ -19,4 +18,6 @@ public interface QuartzJobService {
 	//创建一个定时任务，保存到数据库，并加入到任务管理器
 	void createQuartzJob(QuartzJob Job);
 	
+	//修改job时间
+	void modifyQuartzJob(QuartzJob job);
 }
