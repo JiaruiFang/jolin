@@ -19,7 +19,7 @@ public class QuartzJob implements Serializable {
 
 	/** 任务id */
 	@Id
-	@GeneratedValue // JPA默认的主键生成策略，持久化引擎根据数据库三种主键生成策略选择一种。参考：https://www.cnblogs.com/sandea/p/8252809.html
+	//@GeneratedValue // JPA默认的主键生成策略，持久化引擎根据数据库三种主键生成策略选择一种。参考：https://www.cnblogs.com/sandea/p/8252809.html
 	private long jobId;
 
 	/** 任务名称 */

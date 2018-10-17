@@ -20,4 +20,19 @@ public interface QuartzJobService {
 	
 	//修改job时间
 	void modifyQuartzJob(QuartzJob job);
+	
+	//暂停所有定时任务
+	void pauseAllQuartzJob();
+	
+	//暂停某一个任务
+	void pauseQuartzJob(QuartzJob job);
+	
+	//回复所有定时任务
+	void resumeAllQuartzJob();
+	
+	//恢复某一个定时任务
+	void resumeQuartzJob(QuartzJob job);
+	
+	//删除一个定时任务
+	void deleteQuartzJob(QuartzJob job);
 }
